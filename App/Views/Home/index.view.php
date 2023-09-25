@@ -4,8 +4,6 @@ use App\Models\Post;
 /** @var Post[] $posts */
 /** @var Array $data */
 
-
-
 $posts = $data;
 
 ?><div class="container-fluid">
