@@ -24,6 +24,14 @@
             <img src="public/images/vaiicko_logo.png" title="<?= \App\Config\Configuration::APP_NAME ?>"
                  title="<?= \App\Config\Configuration::APP_NAME ?>">
         </a>
+        <ul class="navbar-nav ms-0">
+            <li class="nav-item">
+                <a class="nav-link" href="?">Domov</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?c=post&a=showform">Pridať príspevok</a>
+            </li>
+        </ul>
         <?php if ($auth->isLogged()) { ?>
             <span class="navbar-text">Prihlásený používateľ: <b><?= $auth->getLoggedUserName() ?></b></span>
             <ul class="navbar-nav ms-auto">

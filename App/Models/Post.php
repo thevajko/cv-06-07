@@ -6,9 +6,9 @@ use App\Core\Model;
 
 class Post extends  Model {
 
-    private int $id;
-    private string $picture;
-    private string $text;
+    protected int $id;
+    protected string $picture;
+    protected string $text;
 
     /**
      * @return mixed

@@ -6,7 +6,7 @@ use App\Models\Post;
 
 $posts = $data;
 
-?><div class="container-fluid">
+?><div class="container">
     <div class="row justify-content-center">
         <div class="col-3 d-flex gap-4  flex-column">
             <?php foreach ($posts as $post) { ?>
