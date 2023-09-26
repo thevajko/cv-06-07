@@ -15,6 +15,7 @@
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="public/css/styl.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="public/js/script.js"></script>
 </head>
 <body>
@@ -24,13 +25,15 @@
             <img src="public/images/vaiicko_logo.png" title="<?= \App\Config\Configuration::APP_NAME ?>"
                  title="<?= \App\Config\Configuration::APP_NAME ?>">
         </a>
-        <ul class="navbar-nav ms-0">
+        <ul class="navbar-nav me-auto">
             <li class="nav-item">
                 <a class="nav-link" href="?">Domov</a>
             </li>
+            <?php if ($auth->isLogged()) { ?>
             <li class="nav-item">
                 <a class="nav-link" href="?c=post&a=showform">Pridať príspevok</a>
             </li>
+            <?php } ?>
         </ul>
         <?php if ($auth->isLogged()) { ?>
             <span class="navbar-text">Prihlásený používateľ: <b><?= $auth->getLoggedUserName() ?></b></span>

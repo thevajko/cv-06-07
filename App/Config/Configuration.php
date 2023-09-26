@@ -3,6 +3,7 @@
 namespace App\Config;
 
 use App\Auth\DummyAuthenticator;
+use App\Auth\SimpleAuthenticator;
 
 /**
  * Class Configuration
@@ -25,5 +26,5 @@ class Configuration
 
     public const DEBUG_QUERY = false;
 
-    public const AUTH_CLASS = DummyAuthenticator::class;
+    public const AUTH_CLASS = SimpleAuthenticator::class; // change auth type here
 }

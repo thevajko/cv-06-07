@@ -11,6 +11,12 @@ use App\Models\Post;
 class PostController extends AControllerBase
 {
 
+    public function authorize($action)
+    {
+        return $this->app->getAuth()->isLogged();
+    }
+
+
     public function index(): Response
     {
         // this controller does not have index, so do redirect to home page
@@ -22,8 +28,18 @@ class PostController extends AControllerBase
         return $this->html();
     }
 
-    public function add(): Response {
+    public function like(){
+        // get id of post to toggle like
+        $id = $this->request()->getValue("id");
+        // get post from db
+        $postToLike = Post::getOne($id);
+        // toggle like
+        $postToLike->likeToggle($this->app->getAuth()->getLoggedUserName());
+        // redirect to home
+        return new RedirectResponse("?");
+    }
 
+    public function add(): Response {
 
         // validation first
         $fileErr = "";
@@ -36,7 +52,7 @@ class PostController extends AControllerBase
         }
 
         $textErr = "";
-        $text = trim($this->request()->getValue("text"));
+        $text = @trim($this->request()->getValue("text"));
         if (empty($text)) {
             $textErr .= "Príspevok musí mať zadaný text.";
         }else {
@@ -60,6 +76,7 @@ class PostController extends AControllerBase
         // fill sent data to new model
         $newPost->setPicture($picturePath);
         $newPost->setText($text);
+        $newPost->setUser($this->app->getAuth()->getLoggedUserName());
         // store in DB => run the insert
         $newPost->save();
         // after successful save, redirect to home page
