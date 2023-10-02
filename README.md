@@ -13,25 +13,36 @@ Momentálne je otvorená branch __MAIN__, ktorá obsahuje _štartér_. Riešenie
    2. Pridajte mu metódu pre zobrazenie formuláru príspevku (`showForm()`) a jeho pridanie do DB (`add`). Do formulára, ako obrázok vkladajte iba URL.
    3. Pridajte link na pridanie príspevku do hlavného menu
    4. Doplníte logiku pre uloženie formulára do DB a po jeho uložení presmerujte používateľa na homepage
-4. Upload obrázka
+5. Mazenie postov
+   1. K postu pridáme tlačidlo, ktorým daný post vymažeme
+6. Editácia postov
+   1. K postu pridáme tlačidlo, ktorým daný budeme editovať
+   2. Na editáciu použijeme formulár pre pridávanie postov
+7. Upload obrázka
    1. Upravte formulár tak, aby vedel odosielať súbory
    2. Spracujte uploaduté súbory tak, aby sa ukladala na náš webový server a v poste sa zobrazil ten
    3. Ošetrite problem, aby používatelia mohlo uploadovať odlišné súbory s rovnakým názvom a neprepisovali si ich navzájom.
-5. Prihlasovanie
+
+## Úlohy 07
+
+1. Prihlasovanie
    1. Vytvorte potomka triedy `DummyAuthenticator` a upravte proces prihlasovania tak, aby bol používateľ prihlásený ak sa jeho login a heslo rovnajú.
    2. Opravte nastavenia aplikácie tak, aby sa používal nový spôsob prihlásenia.
    3. V menu položku pre pridanie postu zobrazte iba prihláseným.
    4. Všetky akcie v kontrolery postov budú iba pre prihlásených
-5. Zobrazte autora postu
+2. Zobrazte autora postu
    1. Upravte model pre posty tak, aby si pamätal login jeho autora
    2. Autora zobrazte v postoch na home page
    3. Autora doplníme pri pridávaní nového postu
-6. Pridanie lajkovania
-   1. Doplňte lakovanie
-   2. Treba vytvoriť nový model
-   3. Doplniť logiku pre lakjovania a zobrazenia poctu lajkov príspevku
-   4. Doplniť na zobrazenie postu tlačidlo pre lajkovanie s počtom likov
-7. Doplníte kontrolu vstupov do formulára. Pri chybe je potrebné farebne vyznačiť chybný element a pri ňom aj chybovú hlášku. Pokiaľ boli v poliach hodnoty je potrebné ich zobraziť (aby to používateľ nemusel vypĺňať nanovo). Kontrolovať sa má:
+3. Pridanie lajkovania
+   1. Treba vytvoriť nový model
+   2. Doplniť logiku pre lakjovania a zobrazenia poctu lajkov príspevku
+   3. Doplniť na zobrazenie postu tlačidlo pre lajkovanie s počtom likov
+4. Pridanie authorizacie
+   1. Update a Delete operácie nad postom, môže len jeho prihlásený autor
+   2. Doplňte príslušné akcie k postom na úvodnej stránke
+
+4. Doplníte kontrolu vstupov do formulára. Pri chybe je potrebné farebne vyznačiť chybný element a pri ňom aj chybovú hlášku. Pokiaľ boli v poliach hodnoty je potrebné ich zobraziť (aby to používateľ nemusel vypĺňať nanovo). Kontrolovať sa má:
    * Či je súbor obrázok
    * Či je súbor vôbec odoslaný = príspevok musí obsahovať obrázok
    * Či je vôbec odoslaný text postu = príspevok musí obsahovať text
