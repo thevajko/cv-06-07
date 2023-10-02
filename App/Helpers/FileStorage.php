@@ -30,4 +30,9 @@ class FileStorage
         }
         return null;
     }
+
+    public static function deleteFile(mixed $getText)
+    {
+        unlink($getText);
+    }
 }
