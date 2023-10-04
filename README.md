@@ -1,7 +1,10 @@
-# VAII Cvičenie 06
-Momentálne je otvorená branch __MAIN__, ktorá obsahuje _štartér_. Riešenie obsahuje branch  __SOLUTION__.
+# VAII Cvičenie 06 a 07
+Momentálne je otvorená branch __MAIN__, ktorá obsahuje _štartér_. 
+Riešenie obsahuje dve branche pre riešenie:
+1. __SOLUTION_06__
+2. __SOLUTION_07__
 
-## Úlohy
+## Úlohy pre cvičenie 06
 
 1. Pridanie modelu pre post
    1. Vytvorte triedu pre model postu. Ten bude obsahovať atribúty `text` a `picture`.
@@ -23,7 +26,7 @@ Momentálne je otvorená branch __MAIN__, ktorá obsahuje _štartér_. Riešenie
    2. Spracujte uploaduté súbory tak, aby sa ukladala na náš webový server a v poste sa zobrazil ten
    3. Ošetrite problem, aby používatelia mohlo uploadovať odlišné súbory s rovnakým názvom a neprepisovali si ich navzájom.
 
-## Úlohy 07
+## Úlohy pre cvičenie 07
 
 1. Prihlasovanie
    1. Vytvorte potomka triedy `DummyAuthenticator` a upravte proces prihlasovania tak, aby bol používateľ prihlásený ak sa jeho login a heslo rovnajú.
