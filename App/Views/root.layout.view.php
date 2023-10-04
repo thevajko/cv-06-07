@@ -29,11 +29,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="?">Domov</a>
             </li>
-            <?php if ($auth->isLogged()) { ?>
             <li class="nav-item">
                 <a class="nav-link" href="?c=post&a=showform">Pridať príspevok</a>
             </li>
-            <?php } ?>
         </ul>
         <?php if ($auth->isLogged()) { ?>
             <span class="navbar-text">Prihlásený používateľ: <b><?= $auth->getLoggedUserName() ?></b></span>

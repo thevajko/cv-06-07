@@ -12,28 +12,6 @@ class PostController extends AControllerBase
 {
     const UPLOAD_DIR = "public/upload";
 
-    public function authorize($action)
-    {
-        // runs action of whole controller to only logged user
-        switch ($action) {
-            case 'edit' :
-            case 'delete' :
-            // get id of post to toggle like
-            $id = $this->request()->getValue("id");
-            // get post from db
-            $postToCheck = Post::getOne($id);
-
-            // check if the actual logged user name is the same as of the post author
-            // if yes, he can edit and delete such post
-            return $postToCheck->getUser() == $this->app->getAuth()->getLoggedUserName();
-            default:
-                // all other action to just logged
-                return $this->app->getAuth()->isLogged();
-        }
-
-    }
-
-
     public function index(): Response
     {
         // this controller does not have index, so do redirect to home page
@@ -43,17 +21,6 @@ class PostController extends AControllerBase
     public function showForm() : Response{
         // just show form
         return $this->html();
-    }
-
-    public function like(){
-        // get id of post to toggle like
-        $id = $this->request()->getValue("id");
-        // get post from db
-        $postToLike = Post::getOne($id);
-        // toggle like
-        $postToLike->likeToggle($this->app->getAuth()->getLoggedUserName());
-        // redirect to home
-        return new RedirectResponse("?");
     }
 
     public function edit(){
@@ -111,16 +78,9 @@ class PostController extends AControllerBase
 
         $textErr = "";
         $text = @trim($this->request()->getValue("text"));
-        if (empty($text)) {
-            $textErr .= "Príspevok musí mať zadaný text.";
-        }else {
-            if (strlen($text) < 3) {
-                $textErr .= "Príspevok musí byť dlhší ako 2 znaky.";
-            }
-        }
 
         if (!empty($fileErr) || !empty($textErr) ) {
-            return $this->showErrorInForm($fileErr, $textErr, $editedPost);
+            return $this->showErrorInForm($fileErr, $editedPost);
         }
 
         if ($editedPost) {
@@ -139,7 +99,6 @@ class PostController extends AControllerBase
             // fill sent data to new model
             $newPost->setPicture($picturePath);
             $newPost->setText($text);
-            $newPost->setUser($this->app->getAuth()->getLoggedUserName());
             // store in DB => run the insert
             $newPost->save();
             // after successful save, redirect to home page
@@ -147,13 +106,11 @@ class PostController extends AControllerBase
         return new RedirectResponse("?");
     }
 
-    private function showErrorInForm($file_err = null, $text_err = null, $editedPost = null) : Response{
+    private function showErrorInForm($text_err = null, $editedPost = null) : Response{
         // else show error
         return $this->html([
             'post' => $editedPost,
-            'file_err' => $file_err,
             'text_err' => $text_err,
-            'text' => $this->request()->getValue("text")
         ], "showForm");
     }
 

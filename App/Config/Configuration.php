@@ -26,5 +26,5 @@ class Configuration
 
     public const DEBUG_QUERY = false;
 
-    public const AUTH_CLASS = SimpleAuthenticator::class; // change auth type here
+    public const AUTH_CLASS = DummyAuthenticator::class; // change auth type here
 }

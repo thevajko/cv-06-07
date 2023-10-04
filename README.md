@@ -22,6 +22,7 @@ Momentálne je otvorená branch __SOLUTION__, ktorá obsahuje riešenie. _Štart
    1. Upravte formulár tak, aby vedel odosielať súbory
    2. Spracujte uploaduté súbory tak, aby sa ukladala na náš webový server a v poste sa zobrazil ten
    3. Ošetrite problem, aby používatelia mohlo uploadovať odlišné súbory s rovnakým názvom a neprepisovali si ich navzájom.
+   4. Pri editovaní postu sa jeho obrázok nemôže vymeniť. Teda namiesto inputu pre upload obrázku ho iba zobrazte.
    
 ## Úlohy 07
 
@@ -41,8 +42,7 @@ Momentálne je otvorená branch __SOLUTION__, ktorá obsahuje riešenie. _Štart
 4. Pridanie authorizacie
    1. Update a Delete operácie nad postom, môže len jeho prihlásený autor
    2. Doplňte príslušné akcie k postom na úvodnej stránke
-
-4. Doplníte kontrolu vstupov do formulára. Pri chybe je potrebné farebne vyznačiť chybný element a pri ňom aj chybovú hlášku. Pokiaľ boli v poliach hodnoty je potrebné ich zobraziť (aby to používateľ nemusel vypĺňať nanovo). Kontrolovať sa má:
+5. Doplníte kontrolu vstupov do formulára. Pri chybe je potrebné farebne vyznačiť chybný element a pri ňom aj chybovú hlášku. Pokiaľ boli v poliach hodnoty je potrebné ich zobraziť (aby to používateľ nemusel vypĺňať nanovo). Kontrolovať sa má:
    * Či je súbor obrázok
    * Či je súbor vôbec odoslaný = príspevok musí obsahovať obrázok
    * Či je vôbec odoslaný text postu = príspevok musí obsahovať text
