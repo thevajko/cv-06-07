@@ -1,5 +1,8 @@
 # VAII Cvičenie 06 a 07
-Momentálne je otvorená branch __SOLUTION__, ktorá obsahuje riešenie. _Štartér_ obsahuje branch  __MAIN__.
+Momentálne je otvorená branch __SOLUTION_07__, ktorá obsahuje riešenie. _Štartér_ obsahuje branch  __MAIN__.
+Riešenie obsahuje dve branche pre riešenie:
+1. __SOLUTION_06__
+2. __SOLUTION_07__
 
 ## Úlohy 06
 
@@ -22,7 +25,7 @@ Momentálne je otvorená branch __SOLUTION__, ktorá obsahuje riešenie. _Štart
    1. Upravte formulár tak, aby vedel odosielať súbory
    2. Spracujte uploaduté súbory tak, aby sa ukladala na náš webový server a v poste sa zobrazil ten
    3. Ošetrite problem, aby používatelia mohlo uploadovať odlišné súbory s rovnakým názvom a neprepisovali si ich navzájom.
-   
+   4. Pri editovaní postu sa jeho obrázok nemôže vymeniť. Teda namiesto inputu pre upload obrázku ho iba zobrazte.
 ## Úlohy 07
 
 1. Prihlasovanie
