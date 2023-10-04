@@ -1,6 +1,9 @@
 # VAII Cvičenie 06 a 07
-Momentálne je otvorená branch __SOLUTION__, ktorá obsahuje riešenie. _Štartér_ obsahuje branch  __MAIN__.
-
+Momentálne je otvorená branch __SOLUTION_06__, ktorá obsahuje riešenie. _Štartér_ obsahuje branch  __MAIN__.
+Riešenie obsahuje dve branche pre riešenie:
+1. __SOLUTION_06__
+2. __SOLUTION_07__
+ 
 ## Úlohy 06
 
 1. Pridanie modelu pre post
