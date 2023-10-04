@@ -67,12 +67,8 @@ class PostController extends AControllerBase
 
         // empty post for edit means creating new one and new one needs image to be uploade... validate
         if (empty($editedPost)) {
-            if (isset($_FILES['picture']['name'])) {
-                if (!FileStorage::checkIfIsFileImage($_FILES['picture']['name'])) {
-                    $fileErr .= "Odoslaný súbor nie je obrázok.";
-                }
-            } else {
-                $fileErr .= "Príspevok musí obsahovať obrázok.";
+            if (! isset($_FILES['picture']['name'])) {
+              $fileErr .= "Príspevok musí obsahovať obrázok.";
             }
         }
 

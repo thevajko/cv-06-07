@@ -4,15 +4,6 @@ namespace App\Helpers;
 
 class FileStorage
 {
-    public static function checkIfIsFileImage($fileName){
-        // we need only extensions, which is located after a dot
-        $exploded = explode(".", trim($fileName));
-        // file name can have multiple dots in it, bud extension is at the last possition
-        $fileExtension = strtolower($exploded[count($exploded) - 1]);
-        // check if is extension match one of the valid formats
-        return in_array($fileExtension, [ "jpg", "jpeg", "png", "gif", "webp"]);
-    }
-
     /**
      * Uploads file to given directory
      * @param $fileData
